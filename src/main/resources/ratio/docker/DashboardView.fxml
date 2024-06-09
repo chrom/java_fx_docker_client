@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="ratio.docker.Controller.DashboardView" fx:id="tabPane">
+    <Tab text="Containers" closable="false">
+        <content>
+            <fx:include source="ContainersView.fxml" fx:id="containersViewBox"/>
+        </content>
+    </Tab>
+    <Tab text="Images" closable="false">
+        <content>
+            <fx:include source="ImagesView.fxml" fx:id="imagesViewBox"/>
+        </content>
+    </Tab>
+
+    <Tab text="Networks" closable="false">
+        <content>
+            <fx:include source="NetworksView.fxml" fx:id="networksView"/>
+        </content>
+    </Tab>
+    <Tab text="Volumes">
+        <content>
+            <fx:include source="VolumesView.fxml"/>
+        </content>
+    </Tab>
+</TabPane>

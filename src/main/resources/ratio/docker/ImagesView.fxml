@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="ratio.docker.Controller.ImagesView">
+    <HBox spacing="10" style="-fx-padding: 10;">
+        <Button fx:id="refreshButton" text="Refresh" style="-fx-font-size: 10pt; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="parentIdColumn" text="Parent ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="parentId"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="repoTagsColumn" text="Repository Tags">
+                <cellValueFactory>
+                    <PropertyValueFactory property="repoTags"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="repoDigestsColumn" text="Repository Digests">
+                <cellValueFactory>
+                    <PropertyValueFactory property="repoDigests"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="sizeColumn" text="Size">
+                <cellValueFactory>
+                    <PropertyValueFactory property="size"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="virtualSizeColumn" text="Virtual Size">
+                <cellValueFactory>
+                    <PropertyValueFactory property="virtualSize"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="sharedSizeColumn" text="Shared Size">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sharedSize"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="labelsColumn" text="Labels">
+                <cellValueFactory>
+                    <PropertyValueFactory property="labels"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="containersColumn" text="Containers">
+                <cellValueFactory>
+                    <PropertyValueFactory property="containers"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="createdColumn" text="Created">
+                <cellValueFactory>
+                    <PropertyValueFactory property="created"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <TableView fx:id="detailsArea" editable="false">
+        <columns>
+            <TableColumn fx:id="fieldNameColumn" text="Field Name" prefWidth="${detailsArea.width * 0.2}">
+                <cellValueFactory>
+                    <PropertyValueFactory property="key"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="fieldValueColumn" text="Field Value" prefWidth="${detailsArea.width * 0.8}">
+                <cellValueFactory>
+                    <PropertyValueFactory property="value"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

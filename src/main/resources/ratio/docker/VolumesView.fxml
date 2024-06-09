@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox fx:controller="ratio.docker.Controller.VolumesView" xmlns:fx="http://javafx.com/fxml">
+    <HBox spacing="10" style="-fx-padding: 10;">
+        <Button fx:id="refreshButton" text="Refresh" style="-fx-font-size: 10pt; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <TableView fx:id="volumeView">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="driverColumn" text="Driver">
+                <cellValueFactory>
+                    <PropertyValueFactory property="driver"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mountpointColumn" text="Mountpoint">
+                <cellValueFactory>
+                    <PropertyValueFactory property="mountpoint"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="labelsColumn" text="Labels">
+                <cellValueFactory>
+                    <PropertyValueFactory property="labels"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="optionsColumn" text="Options">
+                <cellValueFactory>
+                    <PropertyValueFactory property="options"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>
